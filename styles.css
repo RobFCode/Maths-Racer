@@ -40,9 +40,10 @@ body {
   background-image: url("./images/site-bg.png");
 }
 h1 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: normal;
-  line-height: 18px;
+  line-height: 22px;
+  text-decoration: underline;
   padding: 2px;
   margin: 10px 0px 0px 0px;
   text-shadow: 1px 1px 4px black;
