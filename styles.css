@@ -494,7 +494,7 @@ input[type="checkbox"]:checked::before {
     background: none;
   }
   .select-inner {
-    margin: 0px 0px;
+    margin: 0px 20px;
   }
   .select-cont-2 {
     display: block;
