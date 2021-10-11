@@ -490,10 +490,11 @@ input[type="checkbox"]:checked::before {
   }
   /* Selection Area */
   .select-area {
+    width: 100%;
     background: none;
   }
   .select-inner {
-    margin: 0px 8px;
+    margin: 0px 0px;
   }
   .select-cont-2 {
     display: block;
