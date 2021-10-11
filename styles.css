@@ -1,0 +1,586 @@
+/* Maths Racer Style Sheet - Produced by: Rob Fagg (RobFCode) */
+
+/* CSS Variables & Font */
+@font-face {
+  font-family: "ComicSansMS";
+  src: url("./comic.ttf");
+}
+@font-face {
+  font-family: "ComicSansMS";
+  src: url("./comicbd.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "ComicSansMS";
+  src: url("./comici.ttf");
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: "ComicSansMS";
+  src: url("./comicz.ttf");
+  font-weight: bold;
+  font-style: italic, oblique;
+}
+:root {
+  --main-color: white;
+  --second-color: rgb(76, 80, 84);
+  --site-font: "ComicSansMS", "Comic Sans", sans-serif;
+}
+
+/* Initial Page Setup */
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: var(--site-font);
+  font-style: italic;
+  font-size: 15px;
+  text-align: center;
+  color: var(--main-color);
+  background-image: url("./images/site-bg.png");
+}
+
+/* Nav Menu Styles */
+.flex-top {
+  padding: 2px 4px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: auto;
+  align-items: center;
+  border-bottom: 3px solid var(--main-color);
+}
+.nav-item {
+  width: 100px;
+  padding: 2px;
+  margin: 0 6px;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--main-color);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+}
+.nav-item:hover {
+  color: black;
+  background: rgba(255, 255, 255, 1);
+  transition: 0.3s linear;
+}
+.small-img {
+  margin: 8px auto 6px 6px;
+}
+
+/*Logo Display Area */
+.logo-area {
+  height: 274px;
+  background: url("./images/logo-lg.png") center center no-repeat,
+    url("./images/logo-bg-x.png") 0 0 repeat-x;
+}
+
+/* Select Area Styles */
+.select-area {
+  min-height: 120px;
+  background: url("./images/carleft.png") bottom left 12px no-repeat,
+    url("./images/site-bg.png") bottom left -30px no-repeat,
+    url("./images/carleft-bg.png") bottom left repeat-x,
+    url("./images/boy-girl-line.png") bottom right no-repeat;
+}
+.selection {
+  text-shadow: 1px 1px 4px black;
+}
+.select-inner {
+  margin: 0px 50px 0px 50px;
+}
+.select-cont-2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.car-select {
+  margin: 0px 20px 0px auto;
+}
+.car-select img {
+  width: 40px;
+}
+.car-select button {
+  background: none;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.car-select button:hover {
+  background: rgba(00, 00, 00, 0.2);
+  border: 1px solid black;
+}
+.other-options {
+  margin: 0px auto 0px 20px;
+}
+select {
+  background: rgb(64, 75, 81);
+  color: var(--main-color);
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: var(--site-font);
+  border: 1px solid black;
+  cursor: pointer;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 10px;
+  color: rgba(255, 0, 0, 0);
+  background: rgba(255, 0, 0, 0);
+  border: 0px;
+  cursor: pointer;
+  margin: 2px 1px 0px 5px;
+}
+input[type="checkbox"]::before {
+  display: inline-block;
+  content: attr(value);
+  font-family: var(--site-font);
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: bold;
+  width: 24px;
+  height: 18px;
+  color: var(--main-color);
+  background: rgba(64, 75, 81, 1);
+  border-radius: 3px;
+  border: 1px solid black;
+  margin: -4px;
+  padding: 0px;
+}
+input[type="checkbox"]:checked::before {
+  background: green;
+}
+#toggle-sel {
+  margin-left: 4px;
+  width: 60px;
+  height: 20px;
+  line-height: 14px;
+  font-family: var(--site-font);
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid black;
+  background: rgb(64, 75, 81);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+#toggle-sel:hover {
+  background: white;
+  color:rgb(64, 75, 81);
+}
+.select-comments {
+  height: 28px;
+  width: 340px;
+  line-height: 28px;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 10px auto;
+  border-radius: 6px;
+  background: var(--main-color);
+  color: var(--second-color);
+}
+.car-selection {
+  display: none;
+  padding: 6px 70px;
+}
+.car-selection img {
+  width: 40px;
+}
+.car-selection button {
+  margin: 2px;
+  background: rgba(00, 00, 00, 0.2);
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.car-selection button:hover {
+  background: green;
+  border: 1px solid white;
+}
+/* Start of Maths Racer Main Content Styling */
+
+/* Maths Racer Container Styles */
+.maths-racer-section {
+  width: 100%;
+  padding-top: 8px;
+}
+
+/* Top Comments Section */
+.racer-top-comms {
+  display: grid;
+  grid-template-columns: auto 280px 380px auto;
+  height: 37px;
+  background: url("./images/comments-bg.png") top left repeat-x;
+}
+.comms-text {
+  display: flex;
+  height: 37px;
+  line-height: 37px;
+  color: var(--second-color);
+  font-weight: bold;
+}
+#comms {
+  width: 280px;
+  line-height: 35px;
+  background: url("./images/comments-mid-bg.png") repeat-x;
+}
+#comms-end {
+  width: 280px;
+  line-height: 35px;
+  background: url("./images/comments-mid-bg.png") repeat-x;
+}
+
+/* Maths Racer Col Container */
+.racer-cont-cols {
+  height: 340px;
+  display: grid;
+  grid-template-columns: auto 280px 380px auto;
+  background: url("./images/startfin-bg.png") top repeat-x;
+  color: black;
+  min-height: 300px;
+}
+
+/* Race Track Col */
+.spacer {
+  margin: 0;
+  padding: 0;
+}
+.racer-left-col {
+  display: flex;
+  padding-left: 62px;
+  background: url("./images/startline.png") top center no-repeat,
+    url("./images/finishline.png") bottom center no-repeat,
+    url("./images/track-bg.png") top center repeat-y;
+}
+#champlane {
+  width: 66px;
+  height: 136px;
+  margin: 0px 6px;
+  background: url("./images/car0.png") center bottom no-repeat;
+  transition: transform 1s linear;
+  will-change: transform;
+}
+#racerlane {
+  width: 66px;
+  height: 136px;
+  margin: 0px 6px;
+  background-image: url("./images/car1.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  transition: transform 2s linear;
+  will-change: transform;
+}
+
+/* Main Area Col */
+.racer-main {
+  padding: 20px 0px 20px 0px;
+  text-align: center;
+}
+.main-button {
+  margin-top: 27px;
+}
+.btn {
+  width: 140px;
+  height: 30px;
+  font-family: var(--site-font);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: bold;
+  color: white;
+  background: rgb(64, 75, 81);
+  border-radius: 6px;
+  border: 2px solid rgb(64, 75, 81);
+  cursor: pointer;
+}
+.btn:hover {
+  background: white;
+  color: black;
+  font-weight: bold;
+}
+#lights {
+  width: 113px;
+  height: 46px;
+  margin: 40px auto 10px auto;
+  background: url("./images/start-lights.png") no-repeat;
+  background-position-y: 0px;
+}
+#start {
+  transition: 0.2s linear;
+}
+
+/* Questions Section */
+#mracer {
+  color: white;
+  text-shadow: 1px 1px 4px black;
+}
+#mracer input {
+  height: 18px;
+  width: 42px;
+  line-height: 18px;
+  text-align: center;
+  font-family: var(--site-font);
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  background: var(--second-color);
+  color: white;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+#mracer input:active {
+  background: black;
+}
+#mracer input:focus {
+  background: slategray;
+}
+
+/* Bottom Comments Section */
+.racer-bott-comms {
+  width: 100%;
+  height: 37px;
+  background: url("./images/comments-bg.png") top left repeat-x;
+}
+
+/* Racer Finish Section */
+.racer-finish {
+  height: 60px;
+  padding: 0px 0px;
+  background: url("./images/startfin-bg.png") 0px -40px repeat-x;
+  color: var(--second-color);
+}
+.finish-cont {
+  display: grid;
+  height: 60px;
+  grid-template-columns: auto 280px 380px auto;
+}
+.restart-button {
+  padding: 7px;
+}
+#finish {
+  opacity: 0;
+  transition: 0.5s;
+  cursor: initial;
+}
+#reset {
+  display: none;
+  margin-left: 10px;
+  width: 100px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background: rgb(64, 75, 81);
+  border-radius: 6px;
+  border: 2px solid rgb(64, 75, 81);
+  opacity: 0;
+  transition: 0.5s;
+  cursor: initial;
+}
+#reset:hover {
+  background: white;
+  color: black;
+}
+
+/* Footer Section Styles */
+#game-version {
+  height: 20px;
+  line-height: 14px;
+  background: white;
+  color:rgb(64, 75, 81);
+  font-size: 13px;
+  padding-top: 50px;
+}
+#copy {
+  height: 46px;
+  line-height: 16px;
+  font-size: 14px;
+  margin-top: 5px;
+  border-top: 4px solid white;
+  text-shadow: 1px 1px 4px black;
+  background: url("./images/small-logo.png") 10px 10px no-repeat;
+  background-blend-mode: darken;
+}
+#copy a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+  font-weight: bold;
+}
+#copy a:hover {
+  color: rgb(25, 155, 231);
+  transition: 0.1s linear;
+}
+
+/* About Page Styles */
+.about-cont {
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 4px black;
+}
+.about-cont h2 {
+  font-weight: normal;
+  text-decoration: underline;
+}
+.about {
+  width: 80%;
+  margin: 0px auto;
+  padding: 2px 10%;
+  background: none;
+  color:rgb(64, 75, 81);
+  font-size: 14px;
+  font-weight: bold;
+}
+.about h3 {
+  color: rgb(25, 155, 231);
+  text-shadow: 1px 1px 4px black;
+}
+.about ul {
+  list-style-position: inside;
+  padding: 4px;
+  color: white;
+  font-weight: normal;
+  text-shadow: 1px 1px 4px black;
+}
+.about a {
+  text-decoration: none;
+  color: rgb(25, 155, 231);
+  font-weight: bold;
+}
+.about a:hover {
+  color: rgb(20, 105, 155);
+  transition: 0.2s linear;
+}
+.about p {
+  color: white;
+  font-weight: normal;
+  text-shadow: 1px 1px 4px black;
+}
+
+/* Responsive Adjustments For Smaller screens and mobile devices */
+@media screen and (max-width: 680px) {
+  /* Nav Menu */
+  .flex-top {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-item {
+    display: block;
+    width: 100%;
+    padding: 6px 0px;
+    margin: 0px;
+    border-top: 2px solid var(--main-color);
+    border-radius: 0;
+  }
+  /* Selection Area */
+  .select-area {
+    width: 100%;
+    background: none;
+  }
+  .select-inner {
+    margin: 0px 4px;
+  }
+  .select-cont-2 {
+    display: block;
+  }
+  .car-select {
+    margin: 0px;
+  }
+  .other-options {
+    margin: 0px auto;
+  }
+  .ttsel {
+    line-height: 30px;
+  }
+  /* Hiden Car Selection List */
+  .car-selection {
+    padding: 2px 2px;
+  }
+  .car-selection button {
+    margin: 2px;
+  }
+  .select-comments {
+    width: 310px;
+    font-size: 13px;
+    margin: 6px auto;
+    border-radius: 6px;
+  }
+  /* Maths Racer Section */
+  .maths-racer-section {
+    width: 100%;
+    padding-top: 8px;
+  }
+  .racer-top-comms {
+    grid-template-columns: 2px 180px auto auto;
+  }
+  #comms {
+    width: 180px;
+    font-size: 12px;
+  }
+  #comms-end {
+    width: 180px;
+    font-size: 12px;
+  }
+  .racer-cont-cols {
+    grid-template-columns: 2px 180px auto 0px;
+  }
+  /* Race Track Col */
+  .racer-left-col {
+    padding-left: 13px;
+    margin: 0px 5px;
+  }
+  #champlane {
+    margin: 0px 2px;
+  }
+  #racerlane {
+    margin: 0px 2px;
+  }
+  /* Main Area Col */
+  .main-button {
+    margin-top: 27px;
+  }
+  .btn {
+    width: 120px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  /* Questions Section */
+  #mracer {
+    font-size: 12px;
+  }
+  #mracer input {
+    height: 18px;
+    width: 30px;
+    line-height: 18px;
+  }
+  /* Racer Finish Section */
+  .racer-finish {
+    height: 70px;
+    background: url("./images/startfin-bg.png") 0px -20px repeat-x;
+  }
+  .finish-cont {
+    height: 60px;
+    grid-template-columns: auto 2px 318px auto;
+  }
+  .restart-button {
+    padding: 25px 0px;
+  }
+  #reset {
+    font-size: 13px;
+  }
+  /* Footer Adjustments  */
+  #game-version {
+    padding-top: 20px;
+  }
+  #copy {
+    min-height: 54px;
+    background: url("./images/small-logo.png") center 8px no-repeat;
+    padding: 30px 4px 0px 4px;
+  }
+}

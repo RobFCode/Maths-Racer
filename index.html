@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maths Racer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="top" class="flex-top">
+      <img
+        class="small-img"
+        src="./images/small-logo.png"
+        alt="Small Maths Racer Logo"
+      />
+      <a class="nav-item" href="index.html">Race</a>
+      <a class="nav-item" href="howtoplay.html">How To Play</a>
+      <a class="nav-item" href="about.html">About</a>
+    </nav>
+    <section class="logo-area"></section>
+    <section class="select-area">
+      <div class="select-inner">
+        <div class="selection">
+          <p class="ttsel">
+            <strong>Times Tables: </strong>
+            <script>
+              let numtimestables = "";
+              for (let i = 2; i < 13; i++) {
+                numtimestables +=
+                  '<label><input type="checkbox" class="timesselect mrsel" id="' +
+                  i +
+                  'times" name="' +
+                  i +
+                  'times" value="' +
+                  i +
+                  '" >  </label>';
+              }
+              document.write(numtimestables);
+            </script>
+            <button onclick="TimesToggle()" id="toggle-sel" class="mrsel">All</button>
+          </p>
+          <div class="select-cont-2">
+            <div class="other-options">
+              <p>
+                <strong>Number of Questions </strong>(10 - 50):
+                <script>
+                  let qnumberoptions =
+                    '<select id="questionnum" name="questionnum" onchange="UpdateQuestions()"" class="mrsel">';
+                  for (let i = 10; i < 51; i++) {
+                    qnumberoptions +=
+                      '<option value = "' + i + '" >' + i + "</option>";
+                  }
+                  qnumberoptions +=
+                    '</select> </p><p> <strong>Race Length (Minutes) </strong>(1 - 10): <select id="timeset" name="timeset" onchange="UpdateTimeSet()" class="mrsel">';
+                  for (let i = 1; i < 11; i++) {
+                    qnumberoptions +=
+                      '<option value = "' + i + '" >' + i + "</option>";
+                  }
+                  qnumberoptions += "</select>";
+                  document.write(qnumberoptions);
+                </script>
+              </p>
+              <p>
+                <strong> Race Type: </strong>
+                <select id="testtype" name="texttype" onchange="UpdateType()" class="mrsel">
+                  <option value="multi">Multiplication</option>
+                  <option value="div">Division</option>
+                  <option value="both">Both</option>
+                </select>
+              </p>
+            </div>
+            <div class="car-select">
+              <p>
+                <strong>Select Your Car: </strong>
+                <div><button onclick="OpenCarSelection()" class="mrsel"><img id="select-car" src="./images/car1.png" alt="Select Car"></button></div>
+              </p>
+            </div>
+          </div>
+          <div class="car-selection">
+            <button onclick="SelectCar(1)"><img src="./images/car1.png" alt="Car 1"></button>
+            <button onclick="SelectCar(2)"><img src="./images/car2.png" alt="Car 2"></button>
+            <button onclick="SelectCar(3)"><img src="./images/car3.png" alt="Car 3"></button>
+            <button onclick="SelectCar(4)"><img src="./images/car4.png" alt="Car 4"></button>
+            <button onclick="SelectCar(5)"><img src="./images/car5.png" alt="Car 5"></button>
+            <button onclick="SelectCar(6)"><img src="./images/car6.png" alt="Car 6"></button>
+            <button onclick="SelectCar(7)"><img src="./images/car7.png" alt="Car 7"></button>
+            <button onclick="SelectCar(8)"><img src="./images/car8.png" alt="Car 8"></button>
+            <button onclick="SelectCar(9)"><img src="./images/car9.png" alt="Car 9"></button>
+            <button onclick="SelectCar(10)"><img src="./images/car10.png" alt="Car 10"></button>
+            <button onclick="SelectCar(11)"><img src="./images/car11.png" alt="Car 11"></button>
+          </div>
+        </div>
+        <div class="select-comments">
+          Select Options Above, Then Click 'Start Race'
+        </div>
+      </div>
+    </section>
+    <section class="maths-racer-section">
+      <div class="racer-top-comms" id="comms-section">
+        <div class="spacer"></div>
+        <div class="comms-text">
+          <img src="./images/comments-left.png" alt="CL Image">
+          <span id="comms">"I'm Ready To Race You!"</span>
+          <img src="./images/comments-right.png" alt="CL Image">
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="racer-cont-cols">
+        <div class="spacer"></div>
+        <div class="racer-left-col">
+          <div id="champlane">
+          </div>
+          <div id="racerlane">
+          </div>
+        </div>
+        <div class="racer-main">
+          <div class="main-button">
+             <button onclick="GenerateQuestions()" class="btn" id="start">Start Race</button>
+          </div>
+          <div id="lights"></div>
+          <div id="mracer">
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+      <div class="racer-top-comms">
+        <div class="spacer"></div>
+        <div class="comms-text">
+          <img src="./images/comments-left.png" alt="CL Image">
+          <span id="comms-end">Waiting for Race to Start</span>
+          <img src="./images/comments-right.png" alt="CL Image">
+        </div>
+      </div>
+      <div class="racer-finish">
+        <div class="finish-cont">
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+          <div class="restart-button">
+            <button onclick="RestartRace()" class="btn" id="finish" disabled>Restart Race</button>
+            <a href="index.html" target="_self" id="reset">Reset</a>
+         </div>
+         <div class="spacer"></div>
+        </div>
+      </div>
+    </section>
+    <script src="MathsRacer.js"></script>
+    <footer>
+      <div id="game-version">
+        <em>Maths Racer V1.0</em>
+      </div>
+      <div id="copy">
+        <p>
+          Copyright &copy; 2021 Maths Racer - Produced by: <a href="https://www.robfcode.co.uk">- RobFCode -</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
