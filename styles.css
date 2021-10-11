@@ -39,6 +39,14 @@ body {
   color: var(--main-color);
   background-image: url("./images/site-bg.png");
 }
+h1 {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 18px;
+  padding: 2px;
+  margin: 10px 0px 0px 0px;
+  text-shadow: 1px 1px 4px black;
+}
 
 /* Nav Menu Styles */
 .flex-top {
@@ -423,8 +431,9 @@ input[type="checkbox"]:checked::before {
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 4px black;
 }
-.about-cont h2 {
-  font-weight: normal;
+.about-cont h1 {
+  font-size: 22px;
+  line-height: 22px;
   text-decoration: underline;
 }
 .about {
