@@ -4,7 +4,7 @@
 const timeBy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 let numOfQuestions = document.getElementById("questionnum").value;
-let timeLimit = document.getElementById("timeset").value * 60000;
+let timeLimit = (document.getElementById("timeset").value * 60000) + (document.getElementById("timeset2").value * 1000);
 let timesTables = [];
 let answers = [];
 let timer;
@@ -69,7 +69,7 @@ function UpdateQuestions() {
 
 // Function to Update the time limit when changed:
 function UpdateTimeSet() {
-  timeLimit = document.getElementById("timeset").value * 60000;
+  timeLimit = (document.getElementById("timeset").value * 60000) + (document.getElementById("timeset2").value * 1000);
 }
 
 // Function to Generate and display the Questions wehn race starts:
@@ -97,7 +97,7 @@ function GenerateQuestions() {
 
     // Work out movement amounts for cars:
     racerAmount = (rtFinish - 136) / numOfQuestions;
-    champAmount = (rtFinish - 136) / (document.getElementById("timeset").value * 60);
+    champAmount = (rtFinish - 136) / (timeLimit / 1000);
 
     // Disable the Options to prevent changing values:
     const mrsel = document.querySelectorAll(".mrsel");
@@ -337,7 +337,7 @@ function RestartRace() {
   rtFinish = 580;
   racerAmount = 0;
   champAmount = 0;
-  timeLimit = document.getElementById("timeset").value * 60000;
+  timeLimit = (document.getElementById("timeset").value * 60000) + (document.getElementById("timeset2").value * 1000);
   numOfQuestions = document.getElementById("questionnum").value;
   // Re-position the cars:
   document.getElementById("champlane").style.transform = "translateY(" + champStart + "px)";

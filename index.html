@@ -67,12 +67,18 @@
                       '<option value = "' + i + '" >' + i + "</option>";
                   }
                   qnumberoptions +=
-                    '</select> </p><p> <strong>Race Length (Minutes) </strong>(1 - 10): <select id="timeset" name="timeset" onchange="UpdateTimeSet()" class="mrsel">';
+                    '</select> </p><p> <strong>Race Time: </strong><select id="timeset" name="timeset" onchange="UpdateTimeSet()" class="mrsel">';
                   for (let i = 1; i < 11; i++) {
                     qnumberoptions +=
                       '<option value = "' + i + '" >' + i + "</option>";
                   }
-                  qnumberoptions += "</select>";
+                  qnumberoptions +=
+                    '</select> Minute(s), <select id="timeset2" name="timeset2" onchange="UpdateTimeSet()" class="mrsel">';
+                  for (let i = 0; i < 60; i=i+10) {
+                    qnumberoptions +=
+                      '<option value = "' + i + '" >' + i + "</option>";
+                  }
+                  qnumberoptions += "</select> Seconds.";
                   document.write(qnumberoptions);
                 </script>
               </p>

@@ -222,25 +222,27 @@ input[type="checkbox"]:checked::before {
 .racer-top-comms {
   display: grid;
   grid-template-columns: auto 280px 380px auto;
-  height: 37px;
+  height: 36px;
   background: url("./images/comments-bg.png") top left repeat-x;
 }
 .comms-text {
   display: flex;
-  height: 37px;
-  line-height: 37px;
+  height: 36px;
+  line-height: 36px;
   color: var(--second-color);
   font-weight: bold;
 }
 #comms {
   width: 280px;
+  height: 36px;
   line-height: 35px;
-  background: url("./images/comments-mid-bg.png") repeat-x;
+  background: url("./images/comments-mid-bg.png") bottom left repeat-x;
 }
 #comms-end {
   width: 280px;
+  height: 36px;
   line-height: 35px;
-  background: url("./images/comments-mid-bg.png") repeat-x;
+  background: url("./images/comments-mid-bg.png") top left repeat-x;
 }
 
 /* Maths Racer Col Container */
