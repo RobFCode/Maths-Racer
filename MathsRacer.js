@@ -258,6 +258,7 @@ function CheckAnswers(answers, numOfQuests) {
   let correctAnswers = 0;
   let toDisplay = "<p>Your Results are as follows: </p>";
   document.getElementById("lights").style.backgroundPositionY = "-230px";
+  let wonBy = timeLimit;
   clearInterval(timer);
 
   for (let i = 0; i < numOfQuests; i++) {
@@ -297,6 +298,10 @@ function CheckAnswers(answers, numOfQuests) {
     numOfQuests +
     " Answers Correct!</p>";
 
+  if (correctAnswers == numOfQuests) {
+    toDisplay +=
+    "<p>You Won By: <strong>" + wonBy / 1000 + " </strong> Seconds! </p>";
+  }
   document.getElementById("mracer").innerHTML = toDisplay;
   document.getElementById("comms").innerHTML = "Race over!";
 }
